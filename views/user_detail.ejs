@@ -1,0 +1,83 @@
+<html lang="en-gb">
+<%- include('_head') -%>
+    <%- include('_header') -%>
+
+        <body class="bodyusers">
+
+            <div class="profilebanner">
+                <img class = "profilebanner-coverpic" src="<%= coverImageUrl %>">
+                <img class = "profilebanner-profilepic" src="<%= profileImageUrl %>">
+                <div class= "profilebanner-text">
+                    <p class = "profilebanner-text-name"><%= name %></p>
+                    <p style="margin: 0px;"><%= username %></p>
+                    <p class = "profilebanner-text-email" ><%= email %></p>
+                </div>
+            </div>
+           
+            <h2><%= name %>'s posts </h2>
+            <ol class="postlist">
+                <% posts.forEach(function(post) {%>
+
+                    <li class="postsuser">
+                        <img class="imagesuser" src="<%= post.imageUrl %>" alt="<%=post.message%>">
+                        <div class= "post-textbox">
+                            <p style="margin:0; font-weight: 600;">
+                                <%= username %>
+                            </p>
+                            <p style="margin:0; font-weight: 300; color: #dcdcdc;">
+                                <%= post.createdAt %>
+                            </p>
+                            <p style="line-height: 24px;">
+                                <%= post.message %>
+                            </p>
+                        </div>
+                    </li>
+
+                    <% }); %>
+            </ol>
+            <h2>Posts <%= name %> liked </h2>
+            <ol class="postlist">
+                <% likes.forEach(function(post) {%>
+
+                    <li class="postsuser">
+                        <img class="imagesuser" src="<%= post.imageUrl %>" alt="<%=post.message%>">
+                        <div class= "post-textbox">
+                            <p style="margin:0; font-weight: 600;">
+                                <%= username %>
+                            </p>
+                            <p style="margin:0; font-weight: 300; color: #dcdcdc;">
+                                <%= post.createdAt %>
+                            </p>
+                            <p style="line-height: 24px;">
+                                <%= post.message %>
+                            </p>
+                        </div>
+                    </li>
+
+                    <% }); %>
+            </ol>
+            <h2>Posts <%= name %> disliked </h2>
+            <ol class="postlist">
+                <% dislikes.forEach(function(post) {%>
+
+                    <li class="postsuser">
+                        <img class="imagesuser" src="<%= post.imageUrl %>" alt="<%=post.message%>">
+                        <div class= "post-textbox">
+                            <p style="margin:0; font-weight: 600;">
+                                <%= username %>
+                            </p>
+                            <p style="margin:0; font-weight: 300; color: #dcdcdc;">
+                                <%= post.createdAt %>
+                            </p>
+                            <p style="line-height: 24px;">
+                                <%= post.message %>
+                            </p>
+                        </div>
+                    </li>
+
+                    <% }); %>
+            </ol>
+        </body>
+        <%- include('_footer') -%>
+
+</html>

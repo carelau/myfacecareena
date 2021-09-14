@@ -1,0 +1,96 @@
+/* Add your styles here. */
+
+body {
+    font-family: cursive;
+    font-size: 16px;
+    margin-top: 100px;
+}
+
+header{
+    height:60px;
+    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    display:flex;
+    justify-content: center;
+}
+
+nav {
+   
+    z-index: 9999;
+    font-size: 20px;
+    padding: 16px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 auto;
+   
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-last-element:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav .middleitems{
+    justify-content: space-evenly;
+    width: calc(100% - 150px);
+    display: flex;
+}
+
+buttons{
+    position: fixed;
+    bottom: 500px;
+}
+
+#NavSideBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    width:70vh;
+    position:fixed;
+    right:20px;
+    font-size: 20px;
+    display: none;
+    justify-content: space-evenly;
+}
+#NavSideBar a {
+    text-decoration: none;
+}
+
+#PopMenuButton {
+    position:fixed;
+    top:0px;
+    right:0px;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 32px;
+    color: rgb(51, 11, 104);
+    text-align: center;
+}
+
+.posts{
+    list-style: none; 
+    text-align:center;
+    color:rgb(46, 3, 87) ;
+}
+
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}

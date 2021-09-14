@@ -1,0 +1,50 @@
+<html lang="en-gb">
+<%- include('_head') -%>
+    <%- include('_header') -%>
+
+        <body>
+            <div id="NavSideBar">
+                <a href="/posts">Posts</a>
+                <a href="/users">Users</a>
+                <a href="/users/create">Create New User</a>
+                <a href="/posts/create">+ New Post</a>
+            </div>
+            <div class="buttons">
+                <button id="button-colorchange">Click Me!</button>
+                <br>
+                <%if (next) { %>
+                    <a href="<%= next %>">Next</a>
+                    <% } %>
+                        <%if (previous) { %>
+                            <a href="<%= previous %>">Previous</a>
+                            <% } %>
+            </div>
+            <button id="PopMenuButton">PopOut Menu</button>
+
+            <h1>Posts</h1>
+
+            <% results.forEach(function(post) {%>
+                <div class="posts">
+                    <br>
+                    <p>
+                        <%= post.message %>
+                    </p>
+                    <p>
+                        by
+                        <%= post.postedBy.name %> at
+                            <%= post.createdAt %>
+                    </p>
+                    <br>
+                    <img class="image" src=<%=post.imageUrl%> alt="
+                    <%=post.message%>">
+                    <form method="POST" action="/posts/:postId/like/">
+                    <button type="submit">👍</button>
+                    </form>
+                    <button type="submit">👎</button>
+
+                        <% }); %>
+                </div>
+        </body>
+        <%- include('_footer') -%>
+
+</html>
